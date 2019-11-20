@@ -19,6 +19,8 @@ GEM
     byebug (11.0.0)
     coderay (1.1.2)
     concurrent-ruby (1.1.4)
+    faker (2.2.1)
+      i18n (>= 0.8)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.12.2)
@@ -66,6 +68,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   annotate
+  faker
   pry-byebug
   rake
   require_all
@@ -76,4 +79,4 @@ DEPENDENCIES
   yelp-fusion
 
 BUNDLED WITH
-   2.0.1
+   2.0.2
