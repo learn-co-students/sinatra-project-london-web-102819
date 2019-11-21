@@ -3,6 +3,6 @@ class ApplicationController < Sinatra::Base
   set(:views, 'app/views')
 
   get '/' do
-    "Success!"
+    erb :"index"
   end
 end

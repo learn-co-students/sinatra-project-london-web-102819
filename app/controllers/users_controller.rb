@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     
   get '/users' do
-      @users = User.all
+      @users = User.all.order(:name)
       erb :"users/index"
   end
 

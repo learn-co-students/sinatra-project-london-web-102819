@@ -1,7 +1,7 @@
 class RestaurantsController < ApplicationController
     
   get '/restaurants' do
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.all.order(:name)
     erb :"restaurants/index"
   end
 
@@ -27,5 +27,15 @@ class RestaurantsController < ApplicationController
 
       redirect "/restaurants/#{r.id}"
   end
+
+  post '/restaurants/search' do
+      
+      #array of restaurants where each element is [restaurant name, restaurant rating, restaurant address]
+      @restaurants = restaurant_search(params[:location], params[:cuisine])
+      @restaurants.each {|r| Restaurant.create(name: r[0], rating: r[1], address: r[2])}
+      
+      redirect '/restaurants'
+  end
+
   
 end
